@@ -1,83 +1,142 @@
-
- .background-image {
-      background-image: url('Bus-Reservation.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      height: 100vh;
-      margin: 0;
-  }
-
-  label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-  }
-
-  input {
-      width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-  }
-
-  button {
-      margin-top: 20px;
-      width: 100%;
-      background-color: #28a745;
-      color: white;
-      padding: 10px;
-      border: none;
-      border-radius: 4px;
-      font-size: 16px;
-  }
-
-  button:hover {
-      background-color: #218838;
-  }
-
- .body {
- font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
- margin: 0;
- padding: 0;
- text-align: center;
- }
- h1 {
-
-color: rgb(0, 0, 0);
-margin: 0;
-padding: 20px 0;
+/* Background Image */
+.background-image {
+    background-image: url('Bus-Reservation.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
 }
 
+/* Form Body & Typography */
+.body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1 {
+    color: #000;
+    margin: 0;
+    padding: 20px 0;
+}
+
+/* Container Styling */
 .container {
- margin-top: 50px;
-        padding: 50px;
-        padding-left: 20px;
-        background-color: rgba(144, 163, 163, 0.774);
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        width: 30%;
-        margin-left: auto;
-        margin-right: auto;
+    margin-top: 50px;
+    padding: 40px 20px;
+    background-color: rgba(144, 163, 163, 0.774);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* Input Fields */
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
 
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Button */
+button {
+    margin-top: 20px;
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Navigation / Links */
 .a {
-display: inline-block;
-margin: 10px;
-padding: 12px 24px;
-background-color: #007bff;
-color: white;
-text-decoration: none;
-border-radius: 8px;
-transition: background-color 0.3s;
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
 }
 
 .nav-link:hover {
-background-color: #0056b3;
+    background-color: #0056b3;
 }
 
 .logout {
-margin-top: 30px;
+    margin-top: 30px;
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 768px) {
+
+    .background-image {
+        background-image: url('Bus-Reservation-mobile.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .container {
+        width: 80%;
+        padding: 30px 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .a {
+        font-size: 14px;
+        padding: 10px 18px;
+    }
+
+    input,
+    button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .background-image {
+        background-image: url('Bus-Reservation-mobile.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .container {
+        width: 90%;
+        padding: 25px 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    button {
+        padding: 8px;
+    }
 }

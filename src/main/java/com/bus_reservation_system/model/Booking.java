@@ -14,10 +14,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 
+@Setter
+@Getter
 @Document(collection = "bookings")
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
+//@NoArgsConstructor
+//@AllArgsConstructor
 @Builder
 public class Booking {
     @Id
@@ -37,5 +39,17 @@ public class Booking {
     private String bookedAt;
 
     private String status;
+
+    public Booking() {
+    }
+
+    public Booking(String id, Trip trip, String userId, Set<Integer> seatNumbers, String bookedAt, String status) {
+        this.id = id;
+        this.trip = trip;
+        this.userId = userId;
+        this.seatNumbers = seatNumbers;
+        this.bookedAt = bookedAt;
+        this.status = status;
+    }
 
 }

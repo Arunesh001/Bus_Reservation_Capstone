@@ -11,9 +11,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalTime;
 
+@Setter
+@Getter
 @Document(collection = "buses")
-@Data @NoArgsConstructor
-@AllArgsConstructor
+//@Data @NoArgsConstructor
+//@AllArgsConstructor
 @Builder
 public class Bus {
     @Id
@@ -37,5 +39,19 @@ public class Bus {
 
 
     private String tripId;
+
+    public Bus() {
+    }
+
+    public Bus(String id, String busNumber, String operator, int totalSeats, String departureTime, String arrivalTime, String tripId) {
+        this.id = id;
+        this.busNumber = busNumber;
+        this.operator = operator;
+        this.totalSeats = totalSeats;
+        this.departureTime = departureTime;
+        this.arrivalTime = arrivalTime;
+        this.tripId = tripId;
+    }
+
 }
 

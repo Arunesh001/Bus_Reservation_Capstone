@@ -1,8 +1,11 @@
 package com.bus_reservation_system.controller;
 
 import com.bus_reservation_system.model.Trip;
+import com.bus_reservation_system.model.User;
 import com.bus_reservation_system.repository.TripRepository;
+import com.bus_reservation_system.repository.UserRepository;
 import com.bus_reservation_system.service.TripService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,10 +24,33 @@ public class LoginController {
     private TripService tripService;
     @Autowired
     private BookingController bookingController;
+    @Autowired
+    private UserRepository userRepository;
 
     @GetMapping("/login")
     public String loginPage() {
         return "login";
+    }
+
+    @PostMapping("/login")
+    public String processLogin(@RequestParam("username") String username,
+                               @RequestParam("password") String password,
+                               Model model,
+                               HttpSession session) {
+
+        // Find the user by username
+        User user = userRepository.findByUsername(username);
+
+        // Check if user exists and password matches
+        if (user != null && user.getPassword().equals(password)) {
+            // Save user in session
+            session.setAttribute("loggedInUser", user);
+            return "redirect:/"; // Redirect to home/dashboard
+        } else {
+            // Invalid login
+            model.addAttribute("error", "Invalid username or password");
+            return "Invalid username or password"; // Return to login page with error
+        }
     }
 
     @GetMapping("/")

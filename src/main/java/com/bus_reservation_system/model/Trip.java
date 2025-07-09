@@ -14,10 +14,12 @@ import java.util.List;
 import java.util.Set;
 
 
+@Setter
+@Getter
 @Document(collection = "trips")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+//@Data
+//@NoArgsConstructor
+//@AllArgsConstructor
 @Builder
 public class Trip {
     @Id
@@ -46,4 +48,19 @@ public class Trip {
 
     @DBRef
     private Bus bus;
+
+    public Trip() {
+    }
+
+    public Trip(String id, String source, String destination, String travelDate, Double fare, Set<Integer> bookedSeats, List<User> users, Bus bus) {
+        this.id = id;
+        this.source = source;
+        this.destination = destination;
+        this.travelDate = travelDate;
+        this.fare = fare;
+        this.bookedSeats = bookedSeats;
+        this.users = users;
+        this.bus = bus;
+    }
+
 }

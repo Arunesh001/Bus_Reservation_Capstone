@@ -14,10 +14,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+@Setter
+@Getter
 @Document(collection = "users")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+//@Data
+//@NoArgsConstructor
+//@AllArgsConstructor
 @Builder
 public class User {
     @Id
@@ -54,5 +56,24 @@ public class User {
 
     @DBRef
     private Bus bus;
+
+
+    public User() {
+    }
+
+    public User(String id, String username, String password, String email, String roles, boolean enabled, String gender, Integer age, String address, Trip trips, Booking bookings, Bus bus) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.roles = roles;
+        this.enabled = enabled;
+        this.gender = gender;
+        this.age = age;
+        this.address = address;
+        this.trips = trips;
+        this.bookings = bookings;
+        this.bus = bus;
+    }
 
 }
